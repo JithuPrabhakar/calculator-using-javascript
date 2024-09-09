@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body
+    class="d-flex justify-content-center align-items-center"
+    style="height: 100vh"
+  >
+    <div
+      class="p-3 border border-2 shadow rounded-3 bg-secondary"
+      style="width: 300px"
+    >
+      <input type="text" id="display" class="w-100 mb-3 px-3 py-2" />
+      <div class="d-flex flex-wrap gap-3 justify-content-center">
+        <button class="btn btn-dark w-25" onclick="show('0')">0</button>
+        <button class="btn btn-dark w-25" onclick="show('1')">1</button>
+        <button class="btn btn-dark w-25" onclick="show('2')">2</button>
+        <button class="btn btn-dark w-25" onclick="show('3')">3</button>
+        <button class="btn btn-dark w-25" onclick="show('4')">4</button>
+        <button class="btn btn-dark w-25" onclick="show('5')">5</button>
+        <button class="btn btn-dark w-25" onclick="show('6')">6</button>
+        <button class="btn btn-dark w-25" onclick="show('7')">7</button>
+        <button class="btn btn-dark w-25" onclick="show('8')">8</button>
+        <button class="btn btn-dark w-25" onclick="show('9')">9</button>
+        <button class="btn btn-dark w-25" onclick="show('/')">/</button>
+        <button class="btn btn-dark w-25" onclick="show('*')">*</button>
+        <button class="btn btn-dark w-25" onclick="show('-')">-</button>
+        <button class="btn btn-dark w-25" onclick="show('+')">+</button>
+        <button class="btn btn-dark w-25 clear" onclick="backspace()">
+          Clear
+        </button>
+        <button class="btn btn-dark w-25 ac-btn" onclick="reset()">AC</button>
+        <button class="btn btn-dark w-25" onclick="result()">=</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
