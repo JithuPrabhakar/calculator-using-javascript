@@ -24,7 +24,23 @@ function show(number) {
 }
 
 function result() {
-  document.getElementById("display").value = eval(
-    document.getElementById("display").value
-  );
+  numberTwo = document.getElementById("display").value;
+  switch (operator) {
+    case "+":
+      document.getElementById("display").value =
+        parseFloat(numberOne) + parseFloat(numberTwo);
+      break;
+    case "-":
+      document.getElementById("display").value =
+        parseFloat(numberOne) - parseFloat(numberTwo);
+      break;
+    case "*":
+      document.getElementById("display").value =
+        parseFloat(numberOne) * parseFloat(numberTwo);
+      break;
+    case "/":
+      document.getElementById("display").value =
+        parseFloat(numberOne) / parseFloat(numberTwo);
+      break;
+  }
 }
