@@ -1,5 +1,6 @@
 let operators = ["*", "/", "+"];
-let numberOne, numberTwo, operator;
+let numbers = [],
+  operator = [];
 let decimal = false;
 
 function show(number) {
@@ -12,8 +13,9 @@ function show(number) {
     else display.value = number;
   } else {
     if (number == "-" || operators.includes(number)) {
-      numberOne = display.value;
-      operator = number;
+      numbers.push(display.value);
+      console.log(numbers);
+      operator.push(number);
       display.value = "";
       decimal = false;
     } else {
@@ -24,23 +26,27 @@ function show(number) {
 }
 
 function result() {
-  numberTwo = document.getElementById("display").value;
-  switch (operator) {
-    case "+":
-      document.getElementById("display").value =
-        parseFloat(numberOne) + parseFloat(numberTwo);
-      break;
-    case "-":
-      document.getElementById("display").value =
-        parseFloat(numberOne) - parseFloat(numberTwo);
-      break;
-    case "*":
-      document.getElementById("display").value =
-        parseFloat(numberOne) * parseFloat(numberTwo);
-      break;
-    case "/":
-      document.getElementById("display").value =
-        parseFloat(numberOne) / parseFloat(numberTwo);
-      break;
+  numbers.push(document.getElementById("display").value);
+  console.log(numbers);
+  for (
+    let i = 0, j = 0;
+    i < numbers.length - 1, j < operator.length;
+    i++, j++
+  ) {
+    switch (operator[j]) {
+      case "+":
+        numbers[i + 1] = parseFloat(numbers[i]) + parseFloat(numbers[i + 1]);
+        break;
+      case "-":
+        numbers[i + 1] = parseFloat(numbers[i]) - parseFloat(numbers[i + 1]);
+        break;
+      case "*":
+        numbers[i + 1] = parseFloat(numbers[i]) * parseFloat(numbers[i + 1]);
+        break;
+      case "/":
+        numbers[i + 1] = parseFloat(numbers[i]) / parseFloat(numbers[i + 1]);
+        break;
+    }
   }
+  document.getElementById("display").value = numbers[numbers.length - 1];
 }
